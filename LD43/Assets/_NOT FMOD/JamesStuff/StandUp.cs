@@ -29,5 +29,4 @@ public class StandUp : MonoBehaviour {
             transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.fixedDeltaTime * 3);
         }
     }
-
 }

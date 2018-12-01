@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33124390417737042}
   - component: {fileID: 23135472748248210}
   - component: {fileID: 65213173291369426}
+  - component: {fileID: 114228631590408568}
   m_Layer: 0
   m_Name: EnemyBoat
   m_TagString: EnemyBoat
@@ -96,3 +97,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114228631590408568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1531625099497750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afcce5e582f5264baa54ad315d1b548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPiratePrefab: {fileID: 1445759299437302, guid: 9c79fe164fbda4c4aa61152e57d6af47,
+    type: 2}
+  lootPrefab: {fileID: 1153170376440652, guid: 268aefa575cb1d545b8527da8bf3823f, type: 2}
