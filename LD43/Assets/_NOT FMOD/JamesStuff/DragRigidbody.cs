@@ -58,6 +58,7 @@ namespace UnityStandardAssets.Utility
             m_SpringJoint.connectedBody = hit.rigidbody;
 
             StartCoroutine("DragObject", hit.distance);
+            FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.PICK_UP, GetComponent<Transform>().position);
         }
 
 

@@ -17,6 +17,7 @@ public class Water : MonoBehaviour {
         waterSplash.GetComponent<ParticleSystem>().startColor = waterSplashColor;
         waterSplash.transform.LookAt(waterSplash.transform.position + Vector3.up);
         Destroy(waterSplash, 3);
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.WATER_SPLASH, GetComponent<Transform>().position);
     }
 
     private void Update()

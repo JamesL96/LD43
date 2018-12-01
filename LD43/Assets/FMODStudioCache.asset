@@ -13,13 +13,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114416320602494668}
-  - {fileID: 114954569338170162}
+  - {fileID: 114355084236985028}
   EditorEvents:
-  - {fileID: 114099434293722674}
-  MasterBankRef: {fileID: 114954569338170162}
+  - {fileID: 114642831889631100}
+  - {fileID: 114551152316923860}
+  - {fileID: 114051916767731814}
+  - {fileID: 114671870806060654}
+  MasterBankRef: {fileID: 114355084236985028}
   StringsBankRef: {fileID: 114416320602494668}
-  stringsBankWriteTime: 636792076627195625
+  stringsBankWriteTime: 636792954845982872
   cacheVersion: 2
+--- !u!114 &114051916767731814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/cannon/cannon_fire
+  guid: e68a16c980a3a94ebc73c84a3d3fc9fb
+  Banks:
+  - {fileID: 114355084236985028}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 400
+  Length: 3500
 --- !u!114 &114099434293722674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34,7 +59,7 @@ MonoBehaviour:
   Path: event:/empty
   guid: 5ccd6dbc6e3ec24ca41092d885518bcc
   Banks:
-  - {fileID: 114954569338170162}
+  - {fileID: 114355084236985028}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -60,6 +85,24 @@ MonoBehaviour:
   - Name: Desktop
     Value: 34880
   Exists: 1
+--- !u!114 &114355084236985028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Git Projects\LD43\LD43\Assets\FMOD Banks\Desktop\Master Bank.bank
+  lastModified: 636792954845932872
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 390240
+  Exists: 1
 --- !u!114 &114416320602494668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,12 +115,78 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Banks\Desktop\Master Bank.strings.bank
-  lastModified: 636792076627195625
+  lastModified: 636792954845982872
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 716
+    Value: 894
   Exists: 1
+--- !u!114 &114551152316923860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/cannon/explosion
+  guid: c01b442999220d4c8a7711c555f0402a
+  Banks:
+  - {fileID: 114355084236985028}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 400
+  Length: 4500
+--- !u!114 &114642831889631100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/general/water_splash
+  guid: 71bdec3876e72942856056f140c8ff2d
+  Banks:
+  - {fileID: 114355084236985028}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 400
+  Length: 2500
+--- !u!114 &114671870806060654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/general/pick_up
+  guid: 9098ee9f6483444386c894394ad709e9
+  Banks:
+  - {fileID: 114355084236985028}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 546
 --- !u!114 &114954569338170162
 MonoBehaviour:
   m_ObjectHideFlags: 0
