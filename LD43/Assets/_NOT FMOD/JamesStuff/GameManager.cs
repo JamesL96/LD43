@@ -44,6 +44,18 @@ public class GameManager : MonoBehaviour {
         {
             //this doesn't do anything yet
             //it should bring in new boat and such
+
+            GameObject[] friendlies = GameObject.FindGameObjectsWithTag("Friendly");
+            foreach (GameObject f in friendlies)
+            {
+                if (f.GetComponent<AI>())
+                {
+                    f.GetComponent<AI>().enabled = true;
+                    f.GetComponent<StandUp>().enabled = true;
+                    f.GetComponent<Renderer>().material.color = Color.white;
+                }
+            }
+
             GameState = State.Action;
         }
 
@@ -57,6 +69,8 @@ public class GameManager : MonoBehaviour {
                 GameOver();
 
             FindObjectOfType<Slider>().value = percentHeavy;
+
+        GameObject.Find("BoatWeightText").GetComponent<Text>().text = "Boat Weight: " + boatWeight + "/" + maxWeight;
     }
 
     void GameOver()

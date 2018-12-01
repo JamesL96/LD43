@@ -6,6 +6,8 @@ public class AI : MonoBehaviour {
     private GameObject[] targets;
     private bool attacking;
 
+    public GameObject bloodSplatterPrefab;
+
     private void Update()
     {
         if (gameObject.tag == "Friendly")
@@ -17,7 +19,7 @@ public class AI : MonoBehaviour {
         GameObject closestTarget = null;
         foreach(GameObject t in targets)
         {
-            if(Vector3.Distance(transform.position, t.transform.position) < closeDist)
+            if(Vector3.Distance(transform.position, t.transform.position) < closeDist && t.GetComponent<AI>())
             {
                 closestTarget = t;
                 closeDist = Vector3.Distance(transform.position, t.transform.position);
@@ -56,11 +58,16 @@ public class AI : MonoBehaviour {
                 target.GetComponent<StandUp>().enabled = false;
                 target.GetComponent<Renderer>().material.color = Color.red;
                 target.GetComponent<AI>().StopAllCoroutines();
+                GameObject blood = Instantiate(bloodSplatterPrefab, target.transform.position, Quaternion.identity);
+                blood.GetComponent<ParticleSystem>().startColor = Color.red;
+                blood.transform.LookAt(target.transform.position + target.transform.forward);
+                Destroy(blood, 3);
+
                 //DEBUG
                 Debug.DrawLine(transform.position, target.transform.position, Color.green, 0.5f);
 
                 if (target.tag == "Friendly")
-                    Destroy(target.GetComponent<AI>());
+                    target.GetComponent<AI>().enabled = false;
                 else
                     Destroy(target, 3);
             }

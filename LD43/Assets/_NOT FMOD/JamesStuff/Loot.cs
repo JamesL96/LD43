@@ -7,6 +7,7 @@ public class Loot : MonoBehaviour {
 
     private void Awake()
     {
+        GetComponent<Renderer>().material.color = Color.yellow;
         value = Random.Range(100, 1000);
         GetComponent<Rigidbody>().mass = value / 100;
     }
