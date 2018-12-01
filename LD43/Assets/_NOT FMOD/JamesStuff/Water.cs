@@ -5,9 +5,14 @@ using UnityEngine;
 public class Water : MonoBehaviour {
     public GameObject splashPrefab;
     public Color waterSplashColor;
-    public Mesh mesh;
-    public Vector3[] verts;
+    private Mesh mesh;
+    private Vector3[] verts;
 
+    private void Start()
+    {
+        mesh = gameObject.GetComponent<MeshFilter>().mesh;
+        verts = mesh.vertices;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Friendly" || other.gameObject.tag == "Enemy")
@@ -26,8 +31,9 @@ public class Water : MonoBehaviour {
         Vector3[] newverts = verts;
         for(int i = 0; i < verts.Length; i++)
         {
-            newverts[i] = verts[i] + Vector3.up * Mathf.PerlinNoise(verts[i].x+Time.time, verts[i].y+Time.time);
+            newverts[i] = newverts[i] + Vector3.up * Mathf.PerlinNoise(newverts[i].x+Time.time, newverts[i].z+Time.time);
         }
+        mesh.SetVertices(new List<Vector3>(newverts));
         */
     }
 }
