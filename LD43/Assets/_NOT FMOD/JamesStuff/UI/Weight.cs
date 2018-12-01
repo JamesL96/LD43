@@ -14,7 +14,7 @@ public class Weight : MonoBehaviour {
     void OnMouseOver ()
     {
         weightUI.GetComponent<RectTransform>().transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, GetComponent<Collider>().bounds.extents.y * 2, 0));
-        weightUI.GetComponent<Text>().text = "Weight: " + GetComponent<Rigidbody>().mass * 100;
+        weightUI.GetComponent<Text>().text = "Weight: " + Mathf.RoundToInt(GetComponent<Rigidbody>().mass * 100);
 	}
 
     private void OnMouseExit()

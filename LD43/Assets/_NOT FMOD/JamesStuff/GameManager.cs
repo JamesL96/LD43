@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
-    public enum State {Action, Recovery, Transition}
+    public enum State {Action, Recovery, Transition, Respawn}
     [Header("Game Status")]
     public State GameState;
 
@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour {
 
     public float percentHeavy;
 
+    [Header("Wave Manager")]
+    public int wave = 0;
+    public GameObject enemyShipPrefab;
+    private GameObject enemyShip;
+    public Vector3 targetEnemyShipPos;
 
     private Vector3 camTargetPos;
 
@@ -38,6 +43,9 @@ public class GameManager : MonoBehaviour {
                     l.gameObject.tag = "Friendly";
             }
 
+            if (FindObjectsOfType<Loot>().Length == FindObjectOfType<BoatLoot>().loot.ToArray().Length)
+                GameState = State.Transition;
+
             camTargetPos = new Vector3(0, 11, -20);
         }
         if(GameState == State.Transition)
@@ -45,6 +53,21 @@ public class GameManager : MonoBehaviour {
             //this doesn't do anything yet
             //it should bring in new boat and such
 
+            GameObject[] enemyBoats = GameObject.FindGameObjectsWithTag("EnemyBoat");
+            foreach(GameObject eb in enemyBoats)
+            {
+                eb.transform.position -= Vector3.up * Time.fixedDeltaTime;
+                Destroy(eb, 3);
+            }
+
+            camTargetPos = new Vector3(0, 11, -20);
+
+            if (enemyBoats.Length == 0)
+                GameState = State.Respawn;
+        }
+        if(GameState == State.Respawn)
+        {
+            //friendly pirate revive
             GameObject[] friendlies = GameObject.FindGameObjectsWithTag("Friendly");
             foreach (GameObject f in friendlies)
             {
@@ -56,7 +79,17 @@ public class GameManager : MonoBehaviour {
                 }
             }
 
-            GameState = State.Action;
+            camTargetPos = new Vector3(-10, 11, -20);
+
+            if (!enemyShip)
+                enemyShip = Instantiate(enemyShipPrefab, new Vector3(10, 0, -50), Quaternion.identity);
+            enemyShip.transform.position = Vector3.MoveTowards(enemyShip.transform.position, targetEnemyShipPos, Time.fixedDeltaTime * 5);
+            if (Vector3.Distance(enemyShip.transform.position, targetEnemyShipPos) < 0.1f)
+            {
+                wave++;
+                enemyShip = null;
+                GameState = State.Action;
+            }
         }
 
 
@@ -65,7 +98,8 @@ public class GameManager : MonoBehaviour {
                 boatWeight += bo.GetComponent<Rigidbody>().mass * 100;
 
             percentHeavy = boatWeight / maxWeight;
-            if (percentHeavy >= 1)
+
+            if (percentHeavy >= 0.999f)
                 GameOver();
 
             FindObjectOfType<Slider>().value = percentHeavy;

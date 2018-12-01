@@ -1,4 +1,11 @@
-{bc6dcd5c-3e6e-4cc2-a410-92d885518bcc} event:/empty
+{c9168ae6-a380-4ea9-bc73-c84a3d3fc9fb} event:/cannon/cannon_fire
+{29441bc0-2299-4c0d-8a77-11c555f0402a} event:/cannon/explosion
+{38ecbd71-e776-4229-8560-56f140c8ff2d} event:/general/water_splash
+{9fee9890-8364-4344-86c8-94394ad709e9} event:/general/pick_up
+{61df4f3d-6332-4fdd-a04b-ef75f8316ca5} event:/gun_shot
+{3ed48370-a112-4919-b010-9d723b9a7e8f} event:/music
+{3726ceb6-c12a-4aa3-9b67-6f54255095e4} event:/objects_impact
+{2959815c-9579-4ad2-82c7-06007b4d2336} event:/people_yelling
 {5f4f7e58-040d-4d86-955f-fd61e8904d06} bus:/
 {0afe405d-80e8-461d-a741-e6f14f834df9} bus:/Reverb
 {d81486b5-b889-4c73-85de-79bab5be40ad} bank:/Master Bank
