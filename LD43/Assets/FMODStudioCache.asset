@@ -13,12 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114416320602494668}
-  - {fileID: 114115943322759988}
+  - {fileID: 114954569338170162}
   EditorEvents:
   - {fileID: 114099434293722674}
-  MasterBankRef: {fileID: 114115943322759988}
+  MasterBankRef: {fileID: 114954569338170162}
   StringsBankRef: {fileID: 114416320602494668}
-  stringsBankWriteTime: 636791273518730791
+  stringsBankWriteTime: 636792076627195625
   cacheVersion: 2
 --- !u!114 &114099434293722674
 MonoBehaviour:
@@ -34,7 +34,7 @@ MonoBehaviour:
   Path: event:/empty
   guid: 5ccd6dbc6e3ec24ca41092d885518bcc
   Banks:
-  - {fileID: 114115943322759988}
+  - {fileID: 114954569338170162}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -72,9 +72,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Banks\Desktop\Master Bank.strings.bank
-  lastModified: 636791273518730791
+  lastModified: 636792076627195625
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 716
+  Exists: 1
+--- !u!114 &114954569338170162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\James\Documents\LD43\LD43\Assets\FMOD Banks\Desktop\Master Bank.bank
+  lastModified: 636792076627135609
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 34880
   Exists: 1
