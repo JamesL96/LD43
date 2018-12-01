@@ -5,6 +5,8 @@ using UnityEngine;
 public class Water : MonoBehaviour {
     public GameObject splashPrefab;
     public Color waterSplashColor;
+    public Mesh mesh;
+    public Vector3[] verts;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,5 +17,16 @@ public class Water : MonoBehaviour {
         waterSplash.GetComponent<ParticleSystem>().startColor = waterSplashColor;
         waterSplash.transform.LookAt(waterSplash.transform.position + Vector3.up);
         Destroy(waterSplash, 3);
+    }
+
+    private void Update()
+    {
+        /*
+        Vector3[] newverts = verts;
+        for(int i = 0; i < verts.Length; i++)
+        {
+            newverts[i] = verts[i] + Vector3.up * Mathf.PerlinNoise(verts[i].x+Time.time, verts[i].y+Time.time);
+        }
+        */
     }
 }
