@@ -172,6 +172,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114577614833450712, guid: 17780c834da915d46a08bf13476e9dec,
+        type: 2}
+      propertyPath: texture.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4843752966280302, guid: 17780c834da915d46a08bf13476e9dec, type: 2}
       propertyPath: m_LocalPosition.x
       value: -14.709052
@@ -204,6 +209,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114577614833450712, guid: 17780c834da915d46a08bf13476e9dec,
+        type: 2}
+      propertyPath: texture.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 55a70d989dd055343adac84868d74318, type: 3}
+    - target: {fileID: 114577614833450712, guid: 17780c834da915d46a08bf13476e9dec,
+        type: 2}
+      propertyPath: texture.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f1437bb3d4cf65449869211d3d1ddc64, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17780c834da915d46a08bf13476e9dec, type: 2}
   m_IsPrefabAsset: 0
@@ -223,8 +238,9 @@ GameObject:
   - component: {fileID: 151707069}
   - component: {fileID: 151707068}
   - component: {fileID: 151707067}
+  - component: {fileID: 151707071}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,7 +256,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 0.1, z: 10}
+  m_Size: {x: 1000, y: 0.1, z: 1000}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &151707068
 MeshRenderer:
@@ -292,11 +308,22 @@ Transform:
   m_GameObject: {fileID: 151707066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 25, y: 1, z: 25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &151707071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 151707066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d13599c45b5be4d980536344942c56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0

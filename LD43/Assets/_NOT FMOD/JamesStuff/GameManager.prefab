@@ -51,5 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c73e8093623b9b488f673f23f7326a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameState: 0
   boatWeight: 0
+  maxWeight: 3500
   percentHeavy: 0

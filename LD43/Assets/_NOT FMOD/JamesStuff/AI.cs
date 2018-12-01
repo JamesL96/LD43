@@ -55,6 +55,7 @@ public class AI : MonoBehaviour {
                 target.GetComponent<Rigidbody>().AddForce(transform.forward * 200);
                 target.GetComponent<StandUp>().enabled = false;
                 target.GetComponent<Renderer>().material.color = Color.red;
+                target.GetComponent<AI>().StopAllCoroutines();
                 //DEBUG
                 Debug.DrawLine(transform.position, target.transform.position, Color.green, 0.5f);
 
