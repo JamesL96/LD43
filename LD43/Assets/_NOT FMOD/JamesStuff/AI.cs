@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AI : MonoBehaviour {
     private GameObject[] targets;
-    private bool attacking;
+    [HideInInspector]
+    public bool attacking;
 
     public GameObject bloodSplatterPrefab;
 
@@ -21,8 +22,11 @@ public class AI : MonoBehaviour {
         {
             if(Vector3.Distance(transform.position, t.transform.position) < closeDist && t.GetComponent<AI>())
             {
-                closestTarget = t;
-                closeDist = Vector3.Distance(transform.position, t.transform.position);
+                if (t.GetComponent<AI>().enabled == true)
+                {
+                    closestTarget = t;
+                    closeDist = Vector3.Distance(transform.position, t.transform.position);
+                }
             }
         }
 
