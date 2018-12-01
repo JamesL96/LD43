@@ -16,7 +16,10 @@ public class Water : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Friendly" || other.gameObject.tag == "Enemy")
+        {
+            other.gameObject.tag = "Untagged";
             Destroy(other.gameObject, 3);
+        }
 
         GameObject waterSplash = Instantiate(splashPrefab, other.transform.position - new Vector3(0, other.GetComponent<Collider>().bounds.extents.y * 2, 0), Quaternion.identity);
         waterSplash.GetComponent<ParticleSystem>().startColor = waterSplashColor;

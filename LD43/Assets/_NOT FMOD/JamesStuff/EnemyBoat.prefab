@@ -110,4 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPiratePrefab: {fileID: 1445759299437302, guid: 9c79fe164fbda4c4aa61152e57d6af47,
     type: 2}
-  lootPrefab: {fileID: 1153170376440652, guid: 268aefa575cb1d545b8527da8bf3823f, type: 2}
+  lootPrefabs:
+  - {fileID: 1088901020499016, guid: c64f0dd3ce3e4104db7e773cecaad645, type: 2}
+  - {fileID: 1424255683477222, guid: 9601c92c34bca4d4097f1427ef7ab725, type: 2}
+  - {fileID: 1295477559988622, guid: dd4e8e18c648af34bac8569ba4f2618a, type: 2}

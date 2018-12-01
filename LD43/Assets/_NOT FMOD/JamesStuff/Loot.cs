@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Loot : MonoBehaviour {
+    public Vector2 valueRange;
     public float value;
     public bool randomize;
 
@@ -22,8 +23,8 @@ public class Loot : MonoBehaviour {
 
     void Randomize()
     {
-        GetComponent<Renderer>().material.color = Color.yellow;
-        value = Random.Range(100, 1000);
+        value = Mathf.RoundToInt(Random.Range(valueRange.x, valueRange.y));
         GetComponent<Rigidbody>().mass = value / 100;
+        gameObject.name = "Loot(" + value + ")";
     }
 }

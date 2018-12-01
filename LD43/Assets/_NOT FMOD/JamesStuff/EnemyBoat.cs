@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBoat : MonoBehaviour {
     public GameObject enemyPiratePrefab;
-    public GameObject lootPrefab;
+    public GameObject[] lootPrefabs;
     private GameObject loot;
 
     private Vector3 prevPos;
@@ -17,7 +17,8 @@ public class EnemyBoat : MonoBehaviour {
             GameObject ep = Instantiate(enemyPiratePrefab, transform.position + new Vector3(0, 1.5f, (-pirateCount + 1) + (i * 2)), Quaternion.identity);
         }
 
-        loot = Instantiate(lootPrefab, transform.position + new Vector3(2, 1.5f, 0), Quaternion.identity);
+        GameObject randLoot = lootPrefabs[Random.Range(0, lootPrefabs.Length)];
+        loot = Instantiate(randLoot, transform.position + new Vector3(2, 1.5f, Random.Range(-pirateCount, pirateCount)), randLoot.transform.rotation);
 
         prevPos = transform.position;
     }
