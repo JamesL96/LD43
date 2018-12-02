@@ -5,8 +5,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    private static FMOD.Studio.EventInstance ambienceInstance;
-    private static FMOD.Studio.EventInstance musicInstance;
+    private FMOD.Studio.EventInstance ambienceInstance;
+    public FMOD.Studio.EventInstance musicInstance;
 
 
     void Awake()
@@ -85,14 +85,14 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    void SetMusicParameter(FMOD.Studio.EventInstance musicInstance, string name, int value)
+   public void SetMusicParameter(FMOD.Studio.EventInstance musicInstance, string name, int value)
     {
         FMOD.Studio.ParameterInstance parameter;
         musicInstance.getParameter(name, out parameter);
 
         parameter.setValue(value);
     }
-
+                
 }
 
 

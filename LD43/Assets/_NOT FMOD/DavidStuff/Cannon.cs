@@ -31,5 +31,6 @@ public class Cannon : MonoBehaviour {
         GameObject temp = Instantiate(cannonball, transform.position + transform.up*2, Quaternion.identity);
         temp.GetComponent<Rigidbody>().velocity = transform.up.normalized * speed;
         FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.CANNON_FIRE, GetComponent<Transform>().position);
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.PIRATES_YELL, GetComponent<Transform>().position);
     }
 }

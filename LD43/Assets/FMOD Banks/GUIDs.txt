@@ -5,6 +5,9 @@
 {c9168ae6-a380-4ea9-bc73-c84a3d3fc9fb} event:/cannon/cannon_fire
 {9fee9890-8364-4344-86c8-94394ad709e9} event:/general/pick_up
 {38ecbd71-e776-4229-8560-56f140c8ff2d} event:/general/water_splash
+{e8bb7aac-769a-4242-bc6c-1491df84efc5} event:/general/pirates
+{edc3d2da-8fd3-4d24-bfe9-876e106fceb3} event:/general/empty
+{f3403e6b-f62a-4f8f-b484-4c7897f62252} event:/general/pirates (2)
 {f39d121c-b8f1-413d-a0b9-0b93aee94bc9} event:/gun/gun_fire
 {8ea197b6-1044-4a39-aef1-18c6fb4707d8} event:/gun/gun_impact
 {3ed48370-a112-4919-b010-9d723b9a7e8f} event:/music/music

@@ -25,9 +25,11 @@ MonoBehaviour:
   - {fileID: 114197573795124750}
   - {fileID: 114342559475561502}
   - {fileID: 114463484267574900}
+  - {fileID: 114395452209631044}
+  - {fileID: 114364800652839332}
   MasterBankRef: {fileID: 114541010136451246}
   StringsBankRef: {fileID: 114416320602494668}
-  stringsBankWriteTime: 636793605924300171
+  stringsBankWriteTime: 636793647059204407
   cacheVersion: 2
 --- !u!114 &114051916767731814
 MonoBehaviour:
@@ -134,6 +136,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3471
+--- !u!114 &114105586196095782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Crew
+  Min: 0
+  Max: 15
+  Default: 15
 --- !u!114 &114115943322759988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +268,28 @@ MonoBehaviour:
   - Name: Desktop
     Value: 390240
   Exists: 1
+--- !u!114 &114364800652839332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/general/empty
+  guid: dad2c3edd38f244dbfe9876e106fceb3
+  Banks:
+  - {fileID: 114541010136451246}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114377492590193584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +305,28 @@ MonoBehaviour:
   Min: 0
   Max: 15
   Default: 0
+--- !u!114 &114395452209631044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/general/pirates
+  guid: ac7abbe89a764242bc6c1491df84efc5
+  Banks:
+  - {fileID: 114541010136451246}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 400
+  Length: 9000
 --- !u!114 &114416320602494668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,11 +339,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Banks\Desktop\Master Bank.strings.bank
-  lastModified: 636793605924300171
+  lastModified: 636793647059204407
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1480
+    Value: 1564
   Exists: 1
 --- !u!114 &114422173195263586
 MonoBehaviour:
@@ -359,7 +420,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114643884594281566}
+  - {fileID: 114555135105421254}
   MinDistance: 0
   MaxDistance: 0
   Length: 66666
@@ -378,6 +439,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114534103722134546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Crew
+  Min: 0
+  Max: 15
+  Default: 15
 --- !u!114 &114541010136451246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,11 +466,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\Git Projects\LD43\LD43\Assets\FMOD Banks\Desktop\Master Bank.bank
-  lastModified: 636793605924270175
+  lastModified: 636793647059064337
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 4423776
+    Value: 4579648
   Exists: 1
 --- !u!114 &114551152316923860
 MonoBehaviour:
@@ -440,6 +516,21 @@ MonoBehaviour:
   MinDistance: 2.6000001
   MaxDistance: 50
   Length: 36792
+--- !u!114 &114555135105421254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Crew
+  Min: 0
+  Max: 15
+  Default: 15
 --- !u!114 &114558715458953240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,6 +694,36 @@ MonoBehaviour:
   MinDistance: 50
   MaxDistance: 400
   Length: 3843
+--- !u!114 &114836874299564124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Crew
+  Min: 0
+  Max: 15
+  Default: 15
+--- !u!114 &114864327975172994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Crew
+  Min: 0
+  Max: 15
+  Default: 15
 --- !u!114 &114927366436299152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,6 +757,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 34880
   Exists: 1
+--- !u!114 &114975950491693464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Crew
+  Min: 0
+  Max: 15
+  Default: 15
 --- !u!114 &114995163198328724
 MonoBehaviour:
   m_ObjectHideFlags: 0
