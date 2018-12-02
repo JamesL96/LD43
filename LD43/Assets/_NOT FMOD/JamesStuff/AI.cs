@@ -20,14 +20,15 @@ public class AI : MonoBehaviour {
         GameObject closestTarget = null;
         foreach(GameObject t in targets)
         {
-            if(Vector3.Distance(transform.position, t.transform.position) < closeDist && t.GetComponent<AI>())
-            {
-                if (t.GetComponent<AI>().enabled == true)
+            if(t != null)
+                if(Vector3.Distance(transform.position, t.transform.position) < closeDist && t.GetComponent<AI>())
                 {
-                    closestTarget = t;
-                    closeDist = Vector3.Distance(transform.position, t.transform.position);
+                    if (t.GetComponent<AI>().enabled == true)
+                    {
+                        closestTarget = t;
+                        closeDist = Vector3.Distance(transform.position, t.transform.position);
+                    }
                 }
-            }
         }
 
         if (closestTarget != null && !GetComponent<StandUp>().standingUp)

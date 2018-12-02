@@ -13,13 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114416320602494668}
-  - {fileID: 114739938074366692}
+  - {fileID: 114435450889272970}
   EditorEvents:
   - {fileID: 114642831889631100}
   - {fileID: 114551152316923860}
   - {fileID: 114051916767731814}
   - {fileID: 114671870806060654}
-  MasterBankRef: {fileID: 114739938074366692}
+  MasterBankRef: {fileID: 114435450889272970}
   StringsBankRef: {fileID: 114416320602494668}
   stringsBankWriteTime: 636792755854210457
   cacheVersion: 2
@@ -37,7 +37,7 @@ MonoBehaviour:
   Path: event:/cannon/cannon_fire
   guid: e68a16c980a3a94ebc73c84a3d3fc9fb
   Banks:
-  - {fileID: 114739938074366692}
+  - {fileID: 114435450889272970}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -121,6 +121,43 @@ MonoBehaviour:
   - Name: Desktop
     Value: 894
   Exists: 1
+--- !u!114 &114430003351056492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\david\OneDrive\Documents\GitHub\LD43\LD43\Assets\FMOD Banks\Desktop\Master
+    Bank.bank
+  lastModified: 636792768347012942
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 390240
+  Exists: 1
+--- !u!114 &114435450889272970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\James\Documents\LD43\LD43\Assets\FMOD Banks\Desktop\Master Bank.bank
+  lastModified: 636792755854190694
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 390240
+  Exists: 1
 --- !u!114 &114551152316923860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +172,7 @@ MonoBehaviour:
   Path: event:/cannon/explosion
   guid: c01b442999220d4c8a7711c555f0402a
   Banks:
-  - {fileID: 114739938074366692}
+  - {fileID: 114435450889272970}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -157,7 +194,7 @@ MonoBehaviour:
   Path: event:/general/water_splash
   guid: 71bdec3876e72942856056f140c8ff2d
   Banks:
-  - {fileID: 114739938074366692}
+  - {fileID: 114435450889272970}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -179,7 +216,7 @@ MonoBehaviour:
   Path: event:/general/pick_up
   guid: 9098ee9f6483444386c894394ad709e9
   Banks:
-  - {fileID: 114739938074366692}
+  - {fileID: 114435450889272970}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
