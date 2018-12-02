@@ -63,26 +63,27 @@ public class GameManager : MonoBehaviour {
             camTargetPos = new Vector3(0, 11, -20);
 
             if (enemyBoats.Length == 0)
+            {
+                //friendly pirate revive
+                GameObject[] friendlies = GameObject.FindGameObjectsWithTag("Friendly");
+                foreach (GameObject f in friendlies)
+                {
+                    if (f.GetComponent<AI>())
+                    {
+                        f.GetComponent<AI>().enabled = true;
+                        f.GetComponent<StandUp>().enabled = true;
+                        f.GetComponent<Renderer>().material.color = Color.white;
+                    }
+                }
                 GameState = State.Respawn;
+            }
         }
         if(GameState == State.Respawn)
         {
-            //friendly pirate revive
-            GameObject[] friendlies = GameObject.FindGameObjectsWithTag("Friendly");
-            foreach (GameObject f in friendlies)
-            {
-                if (f.GetComponent<AI>())
-                {
-                    f.GetComponent<AI>().enabled = true;
-                    f.GetComponent<StandUp>().enabled = true;
-                    f.GetComponent<Renderer>().material.color = Color.white;
-                }
-            }
-
             camTargetPos = new Vector3(-10, 11, -20);
 
             if (!enemyShip)
-                enemyShip = Instantiate(enemyShipPrefab, new Vector3(10, 0, -50), Quaternion.identity);
+                enemyShip = Instantiate(enemyShipPrefab, new Vector3(10, 0, -30), Quaternion.identity);
             enemyShip.transform.position = Vector3.MoveTowards(enemyShip.transform.position, targetEnemyShipPos, Time.fixedDeltaTime * 5);
             if (Vector3.Distance(enemyShip.transform.position, targetEnemyShipPos) < 0.1f)
             {
