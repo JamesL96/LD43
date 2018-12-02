@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-    public enum State {Action, Recovery, Transition, Respawn}
+    public enum State {Action, Recovery, Transition, Respawn, Victory}
     [Header("Game Status")]
     public State GameState;
 
@@ -50,9 +51,6 @@ public class GameManager : MonoBehaviour {
         }
         if(GameState == State.Transition)
         {
-            //this doesn't do anything yet
-            //it should bring in new boat and such
-
             GameObject[] enemyBoats = GameObject.FindGameObjectsWithTag("EnemyBoat");
             foreach(GameObject eb in enemyBoats)
             {
@@ -75,7 +73,11 @@ public class GameManager : MonoBehaviour {
                         f.GetComponent<Renderer>().material.color = Color.white;
                     }
                 }
-                GameState = State.Respawn;
+
+                if (FindObjectOfType<LootUI>().lootWeight < maxWeight)
+                    GameState = State.Respawn;
+                else
+                    GameState = State.Victory;
             }
         }
         if(GameState == State.Respawn)
@@ -92,18 +94,23 @@ public class GameManager : MonoBehaviour {
                 GameState = State.Action;
             }
         }
+        if(GameState == State.Victory)
+        {
+
+            SceneManager.LoadScene(1);
+        }
 
 
-            boatWeight = 0;
-            foreach (GameObject bo in FindObjectOfType<Boat>().boatObjs)
-                boatWeight += bo.GetComponent<Rigidbody>().mass * 100;
+        boatWeight = 0;
+        foreach (GameObject bo in FindObjectOfType<Boat>().boatObjs)
+            boatWeight += bo.GetComponent<Rigidbody>().mass * 100;
 
-            percentHeavy = boatWeight / maxWeight;
+        percentHeavy = boatWeight / maxWeight;
 
-            if (percentHeavy >= 0.999f)
-                GameOver();
+        if (percentHeavy >= 0.999f)
+            GameOver();
 
-            FindObjectOfType<Slider>().value = percentHeavy;
+        FindObjectOfType<Slider>().value = percentHeavy;
 
         GameObject.Find("BoatWeightText").GetComponent<Text>().text = "Boat Weight: " + boatWeight + "/" + maxWeight;
     }
