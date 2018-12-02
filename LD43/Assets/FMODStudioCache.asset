@@ -24,9 +24,10 @@ MonoBehaviour:
   - {fileID: 114819069542361106}
   - {fileID: 114197573795124750}
   - {fileID: 114342559475561502}
+  - {fileID: 114463484267574900}
   MasterBankRef: {fileID: 114541010136451246}
   StringsBankRef: {fileID: 114416320602494668}
-  stringsBankWriteTime: 636793471738683072
+  stringsBankWriteTime: 636793605924300171
   cacheVersion: 2
 --- !u!114 &114051916767731814
 MonoBehaviour:
@@ -207,7 +208,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 50
+  MinDistance: 16.5
   MaxDistance: 400
   Length: 8500
 --- !u!114 &114342559475561502
@@ -250,6 +251,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 390240
   Exists: 1
+--- !u!114 &114377492590193584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Crew
+  Min: 0
+  Max: 15
+  Default: 0
 --- !u!114 &114416320602494668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,11 +278,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Banks\Desktop\Master Bank.strings.bank
-  lastModified: 636793471738683072
+  lastModified: 636793605924300171
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1368
+    Value: 1480
   Exists: 1
 --- !u!114 &114422173195263586
 MonoBehaviour:
@@ -324,6 +340,44 @@ MonoBehaviour:
   - Name: Desktop
     Value: 390240
   Exists: 1
+--- !u!114 &114463484267574900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/music/music
+  guid: 7083d43e12a11949b0109d723b9a7e8f
+  Banks:
+  - {fileID: 114541010136451246}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114643884594281566}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 66666
+--- !u!114 &114525784792898794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Crew
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114541010136451246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,11 +390,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\Git Projects\LD43\LD43\Assets\FMOD Banks\Desktop\Master Bank.bank
-  lastModified: 636793471738623094
+  lastModified: 636793605924270175
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2559744
+    Value: 4423776
   Exists: 1
 --- !u!114 &114551152316923860
 MonoBehaviour:
@@ -451,6 +505,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 400
   Length: 2500
+--- !u!114 &114643884594281566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Crew
+  Min: 0
+  Max: 15
+  Default: 15
 --- !u!114 &114671870806060654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,6 +603,21 @@ MonoBehaviour:
   MinDistance: 50
   MaxDistance: 400
   Length: 3843
+--- !u!114 &114927366436299152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Crew
+  Min: 0
+  Max: 15
+  Default: 0
 --- !u!114 &114954569338170162
 MonoBehaviour:
   m_ObjectHideFlags: 0
