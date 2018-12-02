@@ -53,6 +53,7 @@ public class AI : MonoBehaviour {
 
         //fire animation
         int x = Random.Range(1, 10);
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.GUN_FIRE, GetComponent<Transform>().position);
 
         //call death animation of target;
         if (x == 5)

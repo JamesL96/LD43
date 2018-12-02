@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,5 +30,6 @@ public class Cannon : MonoBehaviour {
     {
         GameObject temp = Instantiate(cannonball, transform.position + transform.up*2, Quaternion.identity);
         temp.GetComponent<Rigidbody>().velocity = transform.up.normalized * speed;
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.CANNON_FIRE, GetComponent<Transform>().position);
     }
 }

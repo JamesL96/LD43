@@ -29,9 +29,11 @@ public class CannonBall : MonoBehaviour {
                 if (c.gameObject.GetComponent<Rigidbody>())
                 {
                     c.gameObject.GetComponent<Rigidbody>().AddExplosionForce(5, gameObject.transform.position, 5);
+                    FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.CANNON_EXPLOSION, GetComponent<Transform>().position);
                 }
             }
         }
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.CANNON_COLLIDE, GetComponent<Transform>().position);
         Destroy(gameObject);
     }
 }
