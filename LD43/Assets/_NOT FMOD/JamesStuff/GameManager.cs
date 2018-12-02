@@ -73,7 +73,6 @@ public class GameManager : MonoBehaviour {
                     {
                         f.GetComponent<AI>().enabled = true;
                         f.GetComponent<StandUp>().enabled = true;
-                        f.GetComponent<Renderer>().material.color = Color.white;
                     }
                 }
                 if (FindObjectOfType<LootUI>().lootWeight / maxWeight < 1)
@@ -105,16 +104,16 @@ public class GameManager : MonoBehaviour {
         }
 
 
-            boatWeight = 0;
-            foreach (GameObject bo in FindObjectOfType<Boat>().boatObjs)
-                boatWeight += bo.GetComponent<Rigidbody>().mass * 100;
+        boatWeight = 0;
+        foreach (GameObject bo in FindObjectOfType<Boat>().boatObjs)
+            boatWeight += bo.GetComponent<Rigidbody>().mass * 100;
 
-            percentHeavy = boatWeight / maxWeight;
+        percentHeavy = boatWeight / maxWeight;
 
-            if (percentHeavy >= 0.999f)
-                GameOver();
+        if (percentHeavy >= 0.999f)
+            GameOver();
 
-            FindObjectOfType<Slider>().value = percentHeavy;
+        GameObject.Find("BoatWeightSlider").GetComponent<Slider>().value = percentHeavy;
 
         GameObject.Find("BoatWeightText").GetComponent<Text>().text = "Boat Weight: " + boatWeight + "/" + maxWeight;
     }

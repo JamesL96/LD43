@@ -15,7 +15,7 @@ public class Water : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Friendly" || other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Friendly" || other.gameObject.tag == "Enemy" || other.gameObject.GetComponent<Loot>())
         {
             other.gameObject.tag = "Untagged";
             Destroy(other.gameObject, 3);
@@ -30,6 +30,8 @@ public class Water : MonoBehaviour {
 
     private void Update()
     {
+        GetComponent<Renderer>().material.mainTextureOffset -= new Vector2(0, 0.5f * Time.fixedDeltaTime);
+
         mesh.GetVertices(new List<Vector3>(verts));
 
         Vector3[] newverts = verts;

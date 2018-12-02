@@ -26,7 +26,6 @@ namespace UnityStandardAssets.Utility
 
             var mainCamera = FindCamera();
 
-            // We need to actually hit an object
             RaycastHit hit = new RaycastHit();
             if (
                 !Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition).origin,

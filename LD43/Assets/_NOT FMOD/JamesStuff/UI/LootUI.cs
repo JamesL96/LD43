@@ -18,7 +18,7 @@ public class LootUI : MonoBehaviour {
         foreach (GameObject bl in boatLoot)
             lootWeight += bl.GetComponent<Rigidbody>().mass * 100;
 
-        GetComponent<Image>().fillAmount = lootWeight / FindObjectOfType<GameManager>().maxWeight;
+        GetComponent<Image>().fillAmount = Mathf.Lerp(GetComponent<Image>().fillAmount, lootWeight / FindObjectOfType<GameManager>().maxWeight, Time.fixedDeltaTime);
         GameObject.Find("LootTargetText").GetComponent<Text>().text = "Loot: " + Mathf.RoundToInt((lootWeight / FindObjectOfType<GameManager>().maxWeight) * 100) + "%";
 
     }

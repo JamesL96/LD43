@@ -6,13 +6,13 @@ public class CannonBall : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collide");
+        //Debug.Log("Collide");
         explode(true);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("trigger");
+        //Debug.Log("trigger");
         if(!(other.gameObject.layer == LayerMask.GetMask("Aiming")))
         {
             explode(false);
