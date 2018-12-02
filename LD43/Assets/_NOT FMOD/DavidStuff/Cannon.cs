@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cannon : MonoBehaviour {
     public GameObject target;
     public float speed;
+    public GameObject cannonball;
 	// Use this for initialization
 	void Start () {
 		
@@ -12,11 +13,18 @@ public class Cannon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        GetComponent<Rigidbody>().isKinematic = true;
-        float dx = Vector2.Distance(new Vector2(transform.position.x,transform.position.z), new Vector2(target.transform.position.x,target.transform.position.z));
-        float Vx = Vector3.ProjectOnPlane(transform.forward.normalized, Vector3.up).magnitude*speed;
-        float d = .5f * Physics.gravity.magnitude * Mathf.Pow(dx / Vx, 2);
-        transform.LookAt(target.transform.position + Vector3.up*d);
-        transform.Rotate(Vector3.left * 90f);
+        
+        transform.LookAt(target.transform.position);
+        transform.Rotate(Vector3.right * 90f);
+        if (Input.GetMouseButtonDown(0))
+        {
+            fire();
+        }
 	}
+
+    void fire()
+    {
+        GameObject temp = Instantiate(cannonball, transform.position + transform.up*2, Quaternion.identity);
+        temp.GetComponent<Rigidbody>().velocity = transform.up.normalized * speed;
+    }
 }
