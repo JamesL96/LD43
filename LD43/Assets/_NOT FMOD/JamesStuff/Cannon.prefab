@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 136320319054623800}
   - component: {fileID: 54077649337227760}
   - component: {fileID: 114448377144611196}
+  - component: {fileID: 114249046678054614}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Friendly
@@ -101,6 +102,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &114249046678054614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1038785828498002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ef221bee3e94c408a8f45c646df4aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 20
+  cannonball: {fileID: 1531158070492106, guid: 45606af0a146d794e939289e85ba8651, type: 2}
+  gm: {fileID: 1875557370717086, guid: 8f61b7350ecea54498b8ec6c83576f55, type: 2}
 --- !u!114 &114448377144611196
 MonoBehaviour:
   m_ObjectHideFlags: 1
