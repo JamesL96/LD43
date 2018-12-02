@@ -6,19 +6,23 @@ public class Cannon : MonoBehaviour {
     public GameObject target;
     public float speed;
     public GameObject cannonball;
+    public GameObject gm;
 	// Use this for initialization
 	void Start () {
-		
+        gm = GameObject.Find("GameManager");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        
-        transform.LookAt(target.transform.position);
-        transform.Rotate(Vector3.right * 90f);
-        if (Input.GetMouseButtonDown(0))
+
+        if (gm.GetComponent<GameManager>().GameState == GameManager.State.Action)
         {
-            fire();
+            transform.LookAt(target.transform.position);
+            transform.Rotate(Vector3.right * 90f);
+            if (Input.GetMouseButtonDown(0))
+            {
+                fire();
+            }
         }
 	}
 
