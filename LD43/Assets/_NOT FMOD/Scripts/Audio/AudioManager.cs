@@ -29,38 +29,37 @@ public class AudioManager : MonoBehaviour
     {
         ambienceInstance = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.AMBIENCE);
         musicInstance = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.MUSIC);
-        PlayAmbience();
+        PlayAmbience();     
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Keypad1))
+        if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             PlayMusic();
         }
 
-        if (Input.GetKey(KeyCode.Keypad0))
+        if (Input.GetKeyDown(KeyCode.Keypad0))
         {
             StopMusic();
         }
 
-        if (Input.GetKey(KeyCode.Keypad2))
+        if (Input.GetKeyDown(KeyCode.Keypad2))
         {
             SetMusicParameter(musicInstance, FMODPaths.CREW_NUMBER, 5);
         }
 
-        if (Input.GetKey(KeyCode.Keypad3))
+        if (Input.GetKeyDown(KeyCode.Keypad3))
         {
             SetMusicParameter(musicInstance, FMODPaths.CREW_NUMBER, 15);
         }
     }
 
     public void PlayAmbience()
-    {
-
-        FMOD.Studio.PLAYBACK_STATE _playing;
-        ambienceInstance.getPlaybackState(out _playing);
-        if (_playing != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+    {  
+        FMOD.Studio.PLAYBACK_STATE _playingAmbience;
+        ambienceInstance.getPlaybackState(out _playingAmbience);
+        if (_playingAmbience != FMOD.Studio.PLAYBACK_STATE.PLAYING)
         {
             ambienceInstance.start();
         }
@@ -69,11 +68,11 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic()
     {
-
-        FMOD.Studio.PLAYBACK_STATE _playing;
-        musicInstance.getPlaybackState(out _playing);
-        if (_playing != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        FMOD.Studio.PLAYBACK_STATE _playingMusic;
+        musicInstance.getPlaybackState(out _playingMusic);
+        if (_playingMusic != FMOD.Studio.PLAYBACK_STATE.PLAYING)
         {
+        //    print(FMOD.Studio.PLAYBACK_STATE.PLAYING);
             musicInstance.start();
         }
 
@@ -82,7 +81,7 @@ public class AudioManager : MonoBehaviour
     public void StopMusic()
     {
         musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        musicInstance.release();
+       // musicInstance.release();
     }
 
 
