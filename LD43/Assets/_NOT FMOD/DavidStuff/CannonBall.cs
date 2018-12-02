@@ -7,7 +7,7 @@ public class CannonBall : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collide");
-        explode();
+        explode(true);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -15,12 +15,23 @@ public class CannonBall : MonoBehaviour {
         Debug.Log("trigger");
         if(!(other.gameObject.layer == LayerMask.GetMask("Aiming")))
         {
-            explode();
+            explode(false);
         }
     }
 
-    void explode()
+    void explode(bool blowup)
     {
+        if (blowup)
+        {
+            Collider[] cols = Physics.OverlapSphere(transform.position, 5);
+            foreach(Collider c in cols)
+            {
+                if (c.gameObject.GetComponent<Rigidbody>())
+                {
+                    c.gameObject.GetComponent<Rigidbody>().AddExplosionForce(5, gameObject.transform.position, 5);
+                }
+            }
+        }
         Destroy(gameObject);
     }
 }

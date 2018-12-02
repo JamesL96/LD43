@@ -1474,7 +1474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 540621396}
-  speed: 15
+  speed: 25
   cannonball: {fileID: 1531158070492106, guid: 45606af0a146d794e939289e85ba8651, type: 2}
   gm: {fileID: 0}
 --- !u!1 &918625242
