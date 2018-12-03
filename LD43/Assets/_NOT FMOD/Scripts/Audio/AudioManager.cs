@@ -19,8 +19,7 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(instance);
         }
-
-        DontDestroyOnLoad(instance);
+   
     }
 
 

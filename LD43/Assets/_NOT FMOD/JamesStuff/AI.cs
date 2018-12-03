@@ -7,14 +7,18 @@ public class AI : MonoBehaviour
     private GameObject[] targets;
     [HideInInspector]
     public bool attacking;
+    private bool screamSFX = true;
 
     public GameObject splashPrefab;
     public Transform gunshotPos;
 
     private void Update()
     {
-        if (GetComponent<Rigidbody>().velocity.magnitude > 5)
-            FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.WILHELM, GetComponent<Transform>().position);
+        if (GetComponent<Rigidbody>().velocity.magnitude > 5 && (screamSFX))
+        {
+            ResetWilhelmSFX();
+            WilhelmSFX();           
+        }
 
         if (gameObject.tag == "Friendly" || gameObject.tag == "Captain")
             targets = GameObject.FindGameObjectsWithTag("Enemy");
@@ -153,4 +157,19 @@ public class AI : MonoBehaviour
         GetComponent<LineRenderer>().SetPosition(1, Vector3.zero);
         GetComponent<LineRenderer>().SetPosition(2, Vector3.zero);
     }
+
+    void WilhelmSFX()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.WILHELM, GetComponent<Transform>().position);
+        screamSFX = false;
+    }
+
+    void ResetWilhelmSFX()
+    {
+        if (!screamSFX)
+        {
+            screamSFX = true;
+        }
+    }
+
 }

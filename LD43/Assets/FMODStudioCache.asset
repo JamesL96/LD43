@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114416320602494668}
-  - {fileID: 114822752855961590}
+  - {fileID: 114498411194366352}
   EditorEvents:
   - {fileID: 114642831889631100}
   - {fileID: 114051916767731814}
@@ -27,9 +27,10 @@ MonoBehaviour:
   - {fileID: 114463484267574900}
   - {fileID: 114395452209631044}
   - {fileID: 114364800652839332}
-  MasterBankRef: {fileID: 114822752855961590}
+  - {fileID: 114707957804833302}
+  MasterBankRef: {fileID: 114498411194366352}
   StringsBankRef: {fileID: 114416320602494668}
-  stringsBankWriteTime: 636793523835859987
+  stringsBankWriteTime: 636794667751239012
   cacheVersion: 2
 --- !u!114 &114051916767731814
 MonoBehaviour:
@@ -45,7 +46,7 @@ MonoBehaviour:
   Path: event:/cannon/cannon_fire
   guid: e68a16c980a3a94ebc73c84a3d3fc9fb
   Banks:
-  - {fileID: 114822752855961590}
+  - {fileID: 114498411194366352}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -88,7 +89,7 @@ MonoBehaviour:
   Path: event:/cannon/cannon_collide
   guid: c01b442999220d4c8a7711c555f0402a
   Banks:
-  - {fileID: 114822752855961590}
+  - {fileID: 114498411194366352}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -235,7 +236,7 @@ MonoBehaviour:
   Path: event:/gun/gun_fire
   guid: 1c129df3f1b83d41a0b90b93aee94bc9
   Banks:
-  - {fileID: 114822752855961590}
+  - {fileID: 114498411194366352}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -257,7 +258,7 @@ MonoBehaviour:
   Path: event:/gun/gun_impact
   guid: b697a18e4410394aaef118c6fb4707d8
   Banks:
-  - {fileID: 114822752855961590}
+  - {fileID: 114498411194366352}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -297,7 +298,7 @@ MonoBehaviour:
   Path: event:/general/empty
   guid: dad2c3edd38f244dbfe9876e106fceb3
   Banks:
-  - {fileID: 114822752855961590}
+  - {fileID: 114498411194366352}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -334,7 +335,7 @@ MonoBehaviour:
   Path: event:/general/pirates
   guid: ac7abbe89a764242bc6c1491df84efc5
   Banks:
-  - {fileID: 114822752855961590}
+  - {fileID: 114498411194366352}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -354,11 +355,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Banks\Desktop\Master Bank.strings.bank
-  lastModified: 636793523835859987
+  lastModified: 636794667751239012
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1564
+    Value: 1614
   Exists: 1
 --- !u!114 &114422173195263586
 MonoBehaviour:
@@ -430,15 +431,33 @@ MonoBehaviour:
   Path: event:/music/music
   guid: 7083d43e12a11949b0109d723b9a7e8f
   Banks:
-  - {fileID: 114822752855961590}
+  - {fileID: 114498411194366352}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114114795135972662}
+  - {fileID: 114598783832163732}
   MinDistance: 0
   MaxDistance: 0
   Length: 66666
+--- !u!114 &114498411194366352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Git Projects\LD43\LD43\Assets\FMOD Banks\Desktop\Master Bank.bank
+  lastModified: 636794667751169026
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 4593984
+  Exists: 1
 --- !u!114 &114525784792898794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,7 +542,7 @@ MonoBehaviour:
   Path: event:/ambience/waves
   guid: bb481126ef66a54da72b169921fedc66
   Banks:
-  - {fileID: 114822752855961590}
+  - {fileID: 114498411194366352}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -560,7 +579,7 @@ MonoBehaviour:
   Path: event:/ambience/ambience
   guid: ee8569fbc96f194bb4d7eaa231ac99cc
   Banks:
-  - {fileID: 114822752855961590}
+  - {fileID: 114498411194366352}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -568,6 +587,36 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 55607
+--- !u!114 &114598783832163732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Crew
+  Min: 0
+  Max: 15
+  Default: 15
+--- !u!114 &114620417097868214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Crew
+  Min: 0
+  Max: 15
+  Default: 15
 --- !u!114 &114622866557157448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,7 +652,7 @@ MonoBehaviour:
   Path: event:/general/water_splash
   guid: 71bdec3876e72942856056f140c8ff2d
   Banks:
-  - {fileID: 114822752855961590}
+  - {fileID: 114498411194366352}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -640,7 +689,7 @@ MonoBehaviour:
   Path: event:/general/pick_up
   guid: 9098ee9f6483444386c894394ad709e9
   Banks:
-  - {fileID: 114822752855961590}
+  - {fileID: 114498411194366352}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -648,6 +697,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 546
+--- !u!114 &114707957804833302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/general/wilhelm
+  guid: 39a70d3b1d469142a7c62c829e903de7
+  Banks:
+  - {fileID: 114498411194366352}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 400
+  Length: 1666
 --- !u!114 &114739938074366692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,7 +772,7 @@ MonoBehaviour:
   Path: event:/cannon/cannon_explosion
   guid: d10441cb2f68c545996974a2428049b8
   Banks:
-  - {fileID: 114822752855961590}
+  - {fileID: 114498411194366352}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
