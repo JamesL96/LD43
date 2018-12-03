@@ -51,7 +51,6 @@ public class Cannon : MonoBehaviour {
                 if (Vector3.Distance(hit.point, transform.position) < 50 && hit.point.x > transform.position.x + 5)
                 {
                     transform.LookAt(new Vector3(hit.point.x, 3, hit.point.z));
-                    transform.Rotate(Vector3.right * 90f);
                     if (Input.GetMouseButtonDown(0) && cannonReady >= 5)
                     {
                         StartCoroutine(Fire());
@@ -62,8 +61,8 @@ public class Cannon : MonoBehaviour {
 
     IEnumerator Fire()
     {
-        GameObject temp = Instantiate(cannonball, transform.position + transform.up * 2, Quaternion.identity);
-        temp.GetComponent<Rigidbody>().velocity = transform.up.normalized * speed;
+        GameObject temp = Instantiate(cannonball, transform.position + transform.forward * 4, Quaternion.identity);
+        temp.GetComponent<Rigidbody>().velocity = transform.forward.normalized * speed;
         FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.CANNON_FIRE, GetComponent<Transform>().position);
         FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.PIRATES_YELL, GetComponent<Transform>().position);
         cannonReady = 0;
