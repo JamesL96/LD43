@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CannonBall : MonoBehaviour {
+    public GameObject explosionPrefab;
+
+    private void Awake()
+    {
+        GetComponent<Renderer>().material.color = Color.black;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -23,6 +29,8 @@ public class CannonBall : MonoBehaviour {
     {
         if (blowup)
         {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
             Collider[] cols = Physics.OverlapSphere(transform.position, 5);
             foreach(Collider c in cols)
             {

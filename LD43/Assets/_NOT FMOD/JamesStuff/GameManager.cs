@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour {
                     l.gameObject.tag = "Friendly";
             }
 
-            if (FindObjectsOfType<Loot>().Length == FindObjectOfType<BoatLoot>().loot.ToArray().Length)
+                if (FindObjectsOfType<Loot>().Length == FindObjectOfType<BoatLoot>().loot.ToArray().Length)
                 GameState = State.Transition;
 
             camTargetPos = new Vector3(0, 11, -20);
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour {
             GameObject[] enemyBoats = GameObject.FindGameObjectsWithTag("EnemyBoat");
             foreach(GameObject eb in enemyBoats)
             {
-                eb.transform.position -= Vector3.up * Time.fixedDeltaTime;
+                eb.transform.position -= Vector3.up * Time.fixedDeltaTime * 10;
                 Destroy(eb, 3);
             }
 

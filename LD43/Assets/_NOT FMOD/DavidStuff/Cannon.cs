@@ -27,6 +27,7 @@ public class Cannon : MonoBehaviour {
         }
         if (!anyActiveCannons)
         {
+            print("No cannons active");
             GameObject nextCannon = null;
             float maxZPos = -Mathf.Infinity;
             foreach (Cannon c in FindObjectsOfType<Cannon>())
@@ -37,6 +38,7 @@ public class Cannon : MonoBehaviour {
                     nextCannon = c.gameObject;
                 }
             }
+            nextCannon.GetComponent<Cannon>().activeCannon = true;
         }
 
         if(cannonReady < 5)
@@ -48,7 +50,7 @@ public class Cannon : MonoBehaviour {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction, out hit))
                 if (Vector3.Distance(hit.point, transform.position) < 50 && hit.point.x > transform.position.x + 5)
                 {
-                    transform.LookAt(hit.point + Vector3.up * 1.5f);
+                    transform.LookAt(new Vector3(hit.point.x, 3, hit.point.z));
                     transform.Rotate(Vector3.right * 90f);
                     if (Input.GetMouseButtonDown(0) && cannonReady >= 5)
                     {

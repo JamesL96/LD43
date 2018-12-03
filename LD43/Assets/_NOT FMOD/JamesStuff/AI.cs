@@ -12,6 +12,9 @@ public class AI : MonoBehaviour {
 
     private void Update()
     {
+        if (GetComponent<Rigidbody>().velocity.magnitude > 5)
+            print("put the wilhelm scream here");
+
         if (gameObject.tag == "Friendly")
             targets = GameObject.FindGameObjectsWithTag("Enemy");
         if (gameObject.tag == "Enemy")
@@ -68,7 +71,7 @@ public class AI : MonoBehaviour {
             gunShot.transform.LookAt(target.transform.position + target.transform.forward);
         Destroy(gunShot, 3);
 
-        //call death animation of target;
+        //call death animation of target
         if (x == 5)
         {
             if (target)
@@ -76,6 +79,9 @@ public class AI : MonoBehaviour {
                 target.GetComponent<Rigidbody>().AddForce(transform.forward * 200);
                 target.GetComponent<StandUp>().enabled = false;
                 target.GetComponent<AI>().StopAllCoroutines();
+                target.GetComponent<LineRenderer>().SetPosition(0, Vector3.zero);
+                target.GetComponent<LineRenderer>().SetPosition(1, Vector3.zero);
+                target.GetComponent<LineRenderer>().SetPosition(2, Vector3.zero);
                 GameObject blood = Instantiate(splashPrefab, target.transform.position, Quaternion.identity);
                 blood.GetComponent<ParticleSystem>().startColor = Color.red;
                 blood.transform.LookAt(target.transform.position + target.transform.forward);
@@ -98,15 +104,7 @@ public class AI : MonoBehaviour {
         {
             Debug.DrawLine(transform.position, target.transform.position, Color.red, 0.5f);
             //IF WE WANT LASERS UNCOMMENT
-            /*
-            int r = Random.Range(1, 2);
-            Vector3 missOffset = Vector3.zero;
-            if(r == 1)
-                missOffset = new Vector3(Random.Range(0.5f, 1), Random.Range(1, 2), 0);
-            if (r == 2)
-                missOffset = new Vector3(Random.Range(-0.5f, -1), Random.Range(1, 2), 0);
-            StartCoroutine(DrawLaser(false, target.transform.position + (transform.right * missOffset.x) + (transform.up * missOffset.y) + (transform.forward * missOffset.z)));
-            */
+            //StartCoroutine(DrawLaser(false, target.transform.position));
         }
 
         attacking = false;
@@ -114,6 +112,17 @@ public class AI : MonoBehaviour {
 
     IEnumerator DrawLaser(bool hit, Vector3 targetPos)
     {
+        if (!hit)
+        {
+            int r = Random.Range(1, 3);
+            Vector3 missOffset = Vector3.zero;
+            if (r == 1)
+                missOffset = new Vector3(Random.Range(0.5f, 1), Random.Range(1, 2), 0);
+            if (r == 2)
+                missOffset = new Vector3(Random.Range(-0.5f, -1), Random.Range(1, 2), 0);
+            targetPos += (transform.right * missOffset.x) + (transform.up * missOffset.y) + (transform.forward * missOffset.z);
+        }
+
         GetComponent<LineRenderer>().SetPosition(0, gunshotPos.position);
         GetComponent<LineRenderer>().SetPosition(1, targetPos);
         if(hit)

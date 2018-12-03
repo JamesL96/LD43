@@ -37,7 +37,7 @@ public class Water : MonoBehaviour {
         Vector3[] newverts = verts;
         for(int i = 0; i < verts.Length; i++)
         {
-            newverts[i] = newverts[i] - Vector3.up * newverts[i].y + Vector3.up* Mathf.PerlinNoise(newverts[i].x+Time.time*.5f,newverts[i].z+Time.time*.5f);
+            newverts[i] = newverts[i] - Vector3.up * newverts[i].y + Vector3.up* Mathf.PerlinNoise(newverts[i].x+Time.time*.5f,newverts[i].z+Time.time*.5f) * 2;
         }
         mesh.SetVertices(new List<Vector3>(newverts));
         

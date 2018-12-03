@@ -11,11 +11,10 @@ public class CannonUI : MonoBehaviour {
         if (targetCannon == null)
             Destroy(gameObject);
 
-        if (targetCannon.GetComponent<Cannon>().cannonReady < 5)
+        else if (targetCannon.GetComponent<Cannon>().cannonReady < 5)
         {
             GetComponent<RectTransform>().transform.position = Camera.main.WorldToScreenPoint(targetCannon.transform.position + Vector3.up);
             float percentReady = targetCannon.GetComponent<Cannon>().cannonReady / 5;
-            print(percentReady);
             GetComponent<Slider>().value = percentReady;
         }
         else

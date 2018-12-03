@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4651049822046330}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GunshotPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4480566289805148}
   - component: {fileID: 33880150869361084}
   - component: {fileID: 23864777283617486}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crew
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 114068602041082234}
   - component: {fileID: 114406186491135232}
   - component: {fileID: 120848619988040388}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FriendlyPirate
   m_TagString: Friendly
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1982018461899266}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -10, y: 1.62, z: 9}
+  m_LocalPosition: {x: -9, y: 1.62, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4480566289805148}

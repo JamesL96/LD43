@@ -98,9 +98,9 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &114423925336594174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192159e48715c8c45801f88c909f9b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1289980690659142, guid: 72278dfbdc7df1246a2a8e574afb482e,
+    type: 2}
 --- !u!135 &135876618467854658
 SphereCollider:
   m_ObjectHideFlags: 1
