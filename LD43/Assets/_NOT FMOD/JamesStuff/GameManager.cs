@@ -139,7 +139,10 @@ public class GameManager : MonoBehaviour {
         GameObject.Find("BoatWeightText").GetComponent<Text>().text = "Boat Weight: " + boatWeight + "/" + maxWeight;
 
         if (gameOver)
-            FindObjectOfType<Boat>().gameObject.transform.position -= new Vector3(0, 1, 0);
+            FindObjectOfType<Boat>().gameObject.transform.position -= new Vector3(0, 0.1f, 0);
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+            SceneManager.LoadScene(0);
     }
 
     IEnumerator HeavyWarning()
