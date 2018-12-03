@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     public GameObject gameOverUI;
     public GameObject gameOverText;
     private bool gameOver;
+    public GameObject winUI;
 
     [Header("Boat Status")]
     public float boatWeight;
@@ -106,11 +107,12 @@ public class GameManager : MonoBehaviour {
                 GameState = State.Action;
             }
         }
-        if(GameState == State.Victory)
+        if(GameState == State.Victory || Input.GetKeyDown(KeyCode.W))
         {
+            winUI.GetComponent<RectTransform>().transform.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
             //fade out I guess;
             //call ienumerator
-            SceneManager.LoadScene(1);
+            //SceneManager.LoadScene(1);
         }
 
 
