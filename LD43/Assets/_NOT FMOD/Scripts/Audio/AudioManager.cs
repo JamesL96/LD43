@@ -29,11 +29,13 @@ public class AudioManager : MonoBehaviour
     {
         ambienceInstance = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.AMBIENCE);
         musicInstance = FMODUnity.RuntimeManager.CreateInstance(FMODPaths.MUSIC);
+        PlayMusic();
         PlayAmbience();     
     }
 
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             PlayMusic();
@@ -53,6 +55,7 @@ public class AudioManager : MonoBehaviour
         {
             SetMusicParameter(musicInstance, FMODPaths.CREW_NUMBER, 15);
         }
+        */
     }
 
     public void PlayAmbience()

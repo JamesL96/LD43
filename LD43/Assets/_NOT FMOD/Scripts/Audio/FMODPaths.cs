@@ -14,6 +14,8 @@
     public static readonly string PICK_UP = "event:/general/pick_up";
 
     public static readonly string PIRATES_YELL = "event:/general/pirates";
+    public static readonly string WILHELM = "event:/general/wilhelm";
+
 
     public static readonly string AMBIENCE = "event:/ambience/ambience";
     public static readonly string MUSIC = "event:/music/music";

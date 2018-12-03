@@ -13,7 +13,7 @@ public class AI : MonoBehaviour {
     private void Update()
     {
         if (GetComponent<Rigidbody>().velocity.magnitude > 5)
-            print("put the wilhelm scream here");
+            FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.WILHELM, GetComponent<Transform>().position);
 
         if (gameObject.tag == "Friendly")
             targets = GameObject.FindGameObjectsWithTag("Enemy");
