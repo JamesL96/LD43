@@ -8,12 +8,16 @@ public class GameManager : MonoBehaviour {
     public enum State {Action, Recovery, Transition, Respawn, Victory}
     [Header("Game Status")]
     public State GameState;
+    public GameObject gameOverUI;
+    public GameObject gameOverText;
 
     [Header("Boat Status")]
     public float boatWeight;
     public float maxWeight = 3500;
-
     public float percentHeavy;
+    public GameObject heavyBoatUI;
+    public GameObject heavyBoatTime;
+    private bool heavyWarning;
 
     [Header("Wave Manager")]
     public int wave = 0;
@@ -22,6 +26,11 @@ public class GameManager : MonoBehaviour {
     public Vector3 targetEnemyShipPos;
 
     private Vector3 camTargetPos;
+
+    private void Awake()
+    {
+        heavyBoatUI.GetComponent<RectTransform>().transform.position = new Vector3(-1000, -1000, -1000);
+    }
 
     void Update()
     {
@@ -106,20 +115,89 @@ public class GameManager : MonoBehaviour {
 
         boatWeight = 0;
         foreach (GameObject bo in FindObjectOfType<Boat>().boatObjs)
-            boatWeight += bo.GetComponent<Rigidbody>().mass * 100;
+            if(bo.tag != "Captain")
+                boatWeight += bo.GetComponent<Rigidbody>().mass * 100;
 
         percentHeavy = boatWeight / maxWeight;
 
+        if (!GameObject.FindGameObjectWithTag("Captain"))
+            GameOver("Your captain has died!");
+
         if (percentHeavy >= 0.999f)
-            GameOver();
+        {
+            if (!heavyWarning)
+                StartCoroutine(HeavyWarning());
+        }
+        else
+        {
+            heavyBoatUI.GetComponent<RectTransform>().transform.position = new Vector3(-1000, -1000, -1000);
+            StopAllCoroutines();
+            heavyWarning = false;
+        }
 
         GameObject.Find("BoatWeightSlider").GetComponent<Slider>().value = percentHeavy;
 
         GameObject.Find("BoatWeightText").GetComponent<Text>().text = "Boat Weight: " + boatWeight + "/" + maxWeight;
     }
 
-    void GameOver()
+    IEnumerator HeavyWarning()
     {
-        print("Game Over");
+        heavyWarning = true;
+        heavyBoatUI.GetComponent<RectTransform>().transform.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+        int t = 10;
+        heavyBoatTime.GetComponent<Text>().text = t.ToString();
+        heavyBoatTime.GetComponent<Text>().color = Color.white;
+        yield return new WaitForSeconds(1);
+        t--;
+        heavyBoatTime.GetComponent<Text>().text = t.ToString();
+        heavyBoatTime.GetComponent<Text>().color = Color.white;
+        yield return new WaitForSeconds(1);
+        t--;
+        heavyBoatTime.GetComponent<Text>().text = t.ToString();
+        heavyBoatTime.GetComponent<Text>().color = Color.white;
+        yield return new WaitForSeconds(1);
+        t--;
+        heavyBoatTime.GetComponent<Text>().text = t.ToString();
+        heavyBoatTime.GetComponent<Text>().color = Color.white;
+        yield return new WaitForSeconds(1);
+        t--;
+        heavyBoatTime.GetComponent<Text>().text = t.ToString();
+        heavyBoatTime.GetComponent<Text>().color = Color.white;
+        yield return new WaitForSeconds(1);
+        t--;
+        heavyBoatTime.GetComponent<Text>().text = t.ToString();
+        heavyBoatTime.GetComponent<Text>().color = Color.white;
+        yield return new WaitForSeconds(1);
+        t--;
+        heavyBoatTime.GetComponent<Text>().text = t.ToString();
+        heavyBoatTime.GetComponent<Text>().color = Color.white;
+        yield return new WaitForSeconds(1);
+        t--;
+        heavyBoatTime.GetComponent<Text>().text = t.ToString();
+        heavyBoatTime.GetComponent<Text>().color = Color.red;
+        yield return new WaitForSeconds(1);
+        t--;
+        heavyBoatTime.GetComponent<Text>().text = t.ToString();
+        heavyBoatTime.GetComponent<Text>().color = Color.red;
+        yield return new WaitForSeconds(1);
+        t--;
+        heavyBoatTime.GetComponent<Text>().text = t.ToString();
+        heavyBoatTime.GetComponent<Text>().color = Color.red;
+        yield return new WaitForSeconds(1);
+        heavyBoatUI.GetComponent<RectTransform>().transform.position = new Vector3(-1000, -1000, -1000);
+        GameOver("Your boat got too heavy and you sank!");
+    }
+
+    void GameOver(string message)
+    {
+        gameOverUI.GetComponent<RectTransform>().transform.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+        gameOverText.GetComponent<Text>().text = message;
+        StartCoroutine(RestartLevel());
+    }
+
+    IEnumerator RestartLevel()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(0);
     }
 }

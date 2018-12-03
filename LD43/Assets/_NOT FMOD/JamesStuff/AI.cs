@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AI : MonoBehaviour {
+public class AI : MonoBehaviour
+{
     private GameObject[] targets;
     [HideInInspector]
     public bool attacking;
@@ -15,17 +16,28 @@ public class AI : MonoBehaviour {
         if (GetComponent<Rigidbody>().velocity.magnitude > 5)
             FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.WILHELM, GetComponent<Transform>().position);
 
-        if (gameObject.tag == "Friendly")
+        if (gameObject.tag == "Friendly" || gameObject.tag == "Captain")
             targets = GameObject.FindGameObjectsWithTag("Enemy");
         if (gameObject.tag == "Enemy")
+        {
             targets = GameObject.FindGameObjectsWithTag("Friendly");
+            int x = 0;
+            foreach (GameObject t in targets)
+            {
+                if (t.GetComponent<AI>())
+                    if (t.GetComponent<AI>().enabled == true)
+                        x++;
+            }
+            if (x == 0)
+                targets = GameObject.FindGameObjectsWithTag("Captain");
+        }
 
         float closeDist = Mathf.Infinity;
         GameObject closestTarget = null;
-        foreach(GameObject t in targets)
+        foreach (GameObject t in targets)
         {
-            if(t != null)
-                if(Vector3.Distance(transform.position, t.transform.position) < closeDist && t.GetComponent<AI>())
+            if (t != null)
+                if (Vector3.Distance(transform.position, t.transform.position) < closeDist && t.GetComponent<AI>())
                 {
                     if (t.GetComponent<AI>().enabled == true)
                     {
@@ -67,7 +79,7 @@ public class AI : MonoBehaviour {
         GameObject gunShot = Instantiate(splashPrefab, gunshotPos.position, Quaternion.identity);
         gunShot.GetComponent<ParticleSystem>().startColor = Color.black;
         gunShot.transform.localScale = new Vector3(0.1f, 0.1f, 0.2f);
-        if(target)
+        if (target)
             gunShot.transform.LookAt(target.transform.position + target.transform.forward);
         Destroy(gunShot, 3);
 
@@ -76,12 +88,19 @@ public class AI : MonoBehaviour {
         {
             if (target)
             {
+                if (target.tag == "Captain")
+                {
+                    target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                }
                 target.GetComponent<Rigidbody>().AddForce(transform.forward * 200);
                 target.GetComponent<StandUp>().enabled = false;
                 target.GetComponent<AI>().StopAllCoroutines();
-                target.GetComponent<LineRenderer>().SetPosition(0, Vector3.zero);
-                target.GetComponent<LineRenderer>().SetPosition(1, Vector3.zero);
-                target.GetComponent<LineRenderer>().SetPosition(2, Vector3.zero);
+                if (target.GetComponent<LineRenderer>())
+                {
+                    target.GetComponent<LineRenderer>().SetPosition(0, Vector3.zero);
+                    target.GetComponent<LineRenderer>().SetPosition(1, Vector3.zero);
+                    target.GetComponent<LineRenderer>().SetPosition(2, Vector3.zero);
+                }
                 GameObject blood = Instantiate(splashPrefab, target.transform.position, Quaternion.identity);
                 blood.GetComponent<ParticleSystem>().startColor = Color.red;
                 blood.transform.LookAt(target.transform.position + target.transform.forward);
@@ -125,7 +144,7 @@ public class AI : MonoBehaviour {
 
         GetComponent<LineRenderer>().SetPosition(0, gunshotPos.position);
         GetComponent<LineRenderer>().SetPosition(1, targetPos);
-        if(hit)
+        if (hit)
             GetComponent<LineRenderer>().SetPosition(2, targetPos);
         else
             GetComponent<LineRenderer>().SetPosition(2, (targetPos - transform.position) * 100);

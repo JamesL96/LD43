@@ -52,9 +52,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameState: 0
+  gameOverUI: {fileID: 0}
+  gameOverText: {fileID: 0}
   boatWeight: 0
   maxWeight: 3500
   percentHeavy: 0
+  heavyBoatUI: {fileID: 0}
+  heavyBoatTime: {fileID: 0}
   wave: 1
   enemyShipPrefab: {fileID: 1531625099497750, guid: 0464bb86ddc37bf4fa1d7e73f7c51c20,
     type: 2}

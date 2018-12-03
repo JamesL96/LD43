@@ -29,7 +29,8 @@ public class CannonBall : MonoBehaviour {
     {
         if (blowup)
         {
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            explosion.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
 
             Collider[] cols = Physics.OverlapSphere(transform.position, 5);
             foreach(Collider c in cols)
