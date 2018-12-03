@@ -21,6 +21,8 @@
     public static readonly string MUSIC = "event:/music/music";
 
 
+    public static readonly string UI_COUNTDOWN = "event:/general/ui_alert";
+
     // PARAMETERS
 
     public static readonly string CREW_NUMBER = "CREW";

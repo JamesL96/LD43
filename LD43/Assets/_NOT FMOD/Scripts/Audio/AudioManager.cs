@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
+    public static AudioManager instance = null;
     private FMOD.Studio.EventInstance ambienceInstance;
     public FMOD.Studio.EventInstance musicInstance;
 
@@ -14,15 +14,15 @@ public class AudioManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (instance != this)
         {
-            Destroy(instance);
+            Destroy(this.gameObject);
+            return;
+
         }
-   
     }
-
-
 
     void Start()
     {

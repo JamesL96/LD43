@@ -152,6 +152,7 @@ public class GameManager : MonoBehaviour {
         int t = 10;
         heavyBoatTime.GetComponent<Text>().text = t.ToString();
         heavyBoatTime.GetComponent<Text>().color = Color.white;
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.UI_COUNTDOWN, GetComponent<Transform>().position);
         yield return new WaitForSeconds(1);
         if (percentHeavy < 0.999f)
         {
@@ -161,6 +162,7 @@ public class GameManager : MonoBehaviour {
         t--;
         heavyBoatTime.GetComponent<Text>().text = t.ToString();
         heavyBoatTime.GetComponent<Text>().color = Color.white;
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.UI_COUNTDOWN, GetComponent<Transform>().position);
         yield return new WaitForSeconds(1);
         if (percentHeavy < 0.999f)
         {
@@ -170,6 +172,7 @@ public class GameManager : MonoBehaviour {
         t--;
         heavyBoatTime.GetComponent<Text>().text = t.ToString();
         heavyBoatTime.GetComponent<Text>().color = Color.white;
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.UI_COUNTDOWN, GetComponent<Transform>().position);
         yield return new WaitForSeconds(1);
         if (percentHeavy < 0.999f)
         {
@@ -179,6 +182,7 @@ public class GameManager : MonoBehaviour {
         t--;
         heavyBoatTime.GetComponent<Text>().text = t.ToString();
         heavyBoatTime.GetComponent<Text>().color = Color.white;
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.UI_COUNTDOWN, GetComponent<Transform>().position);
         yield return new WaitForSeconds(1);
         if (percentHeavy < 0.999f)
         {
@@ -188,6 +192,7 @@ public class GameManager : MonoBehaviour {
         t--;
         heavyBoatTime.GetComponent<Text>().text = t.ToString();
         heavyBoatTime.GetComponent<Text>().color = Color.white;
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.UI_COUNTDOWN, GetComponent<Transform>().position);
         yield return new WaitForSeconds(1);
         if (percentHeavy < 0.999f)
         {
@@ -197,6 +202,7 @@ public class GameManager : MonoBehaviour {
         t--;
         heavyBoatTime.GetComponent<Text>().text = t.ToString();
         heavyBoatTime.GetComponent<Text>().color = Color.white;
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.UI_COUNTDOWN, GetComponent<Transform>().position);
         yield return new WaitForSeconds(1);
         if (percentHeavy < 0.999f)
         {
@@ -206,6 +212,7 @@ public class GameManager : MonoBehaviour {
         t--;
         heavyBoatTime.GetComponent<Text>().text = t.ToString();
         heavyBoatTime.GetComponent<Text>().color = Color.white;
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.UI_COUNTDOWN, GetComponent<Transform>().position);
         yield return new WaitForSeconds(1);
         if (percentHeavy < 0.999f)
         {
@@ -215,6 +222,7 @@ public class GameManager : MonoBehaviour {
         t--;
         heavyBoatTime.GetComponent<Text>().text = t.ToString();
         heavyBoatTime.GetComponent<Text>().color = Color.red;
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.UI_COUNTDOWN, GetComponent<Transform>().position);
         yield return new WaitForSeconds(1);
         if (percentHeavy < 0.999f)
         {
@@ -224,6 +232,7 @@ public class GameManager : MonoBehaviour {
         t--;
         heavyBoatTime.GetComponent<Text>().text = t.ToString();
         heavyBoatTime.GetComponent<Text>().color = Color.red;
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.UI_COUNTDOWN, GetComponent<Transform>().position);
         yield return new WaitForSeconds(1);
         if (percentHeavy < 0.999f)
         {
@@ -233,6 +242,7 @@ public class GameManager : MonoBehaviour {
         t--;
         heavyBoatTime.GetComponent<Text>().text = t.ToString();
         heavyBoatTime.GetComponent<Text>().color = Color.red;
+        FMODUnity.RuntimeManager.PlayOneShot(FMODPaths.UI_COUNTDOWN, GetComponent<Transform>().position);
         yield return new WaitForSeconds(1);
         if (percentHeavy < 0.999f)
         {
