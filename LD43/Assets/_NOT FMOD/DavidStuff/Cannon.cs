@@ -42,7 +42,7 @@ public class Cannon : MonoBehaviour {
         }
 
         if(cannonReady < 5)
-            cannonReady += Time.fixedDeltaTime;
+            cannonReady += Time.deltaTime;
 
         if (gm.GetComponent<GameManager>().GameState == GameManager.State.Action && activeCannon)
         {

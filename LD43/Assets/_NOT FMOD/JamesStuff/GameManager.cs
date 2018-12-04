@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour {
                         f.GetComponent<StandUp>().enabled = true;
                     }
                 }
-                if (FindObjectOfType<LootUI>().lootWeight / maxWeight < 1)
+                if (FindObjectOfType<LootUI>().lootWeight / maxWeight < 0.999f)
                     GameState = State.Respawn;
                 else
                     GameState = State.Victory;
@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour {
                 GameState = State.Action;
             }
         }
-        if(GameState == State.Victory || Input.GetKeyDown(KeyCode.W))
+        if(GameState == State.Victory || (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.E)))
         {
             winUI.GetComponent<RectTransform>().transform.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
             //fade out I guess;

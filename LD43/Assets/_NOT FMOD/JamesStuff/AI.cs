@@ -99,12 +99,7 @@ public class AI : MonoBehaviour
                 target.GetComponent<Rigidbody>().AddForce(transform.forward * 200);
                 target.GetComponent<StandUp>().enabled = false;
                 target.GetComponent<AI>().StopAllCoroutines();
-                if (target.GetComponent<LineRenderer>())
-                {
-                    target.GetComponent<LineRenderer>().SetPosition(0, Vector3.zero);
-                    target.GetComponent<LineRenderer>().SetPosition(1, Vector3.zero);
-                    target.GetComponent<LineRenderer>().SetPosition(2, Vector3.zero);
-                }
+                target.GetComponent<AI>().attacking = false;
                 GameObject blood = Instantiate(splashPrefab, target.transform.position, Quaternion.identity);
                 blood.GetComponent<ParticleSystem>().startColor = Color.red;
                 blood.transform.LookAt(target.transform.position + target.transform.forward);

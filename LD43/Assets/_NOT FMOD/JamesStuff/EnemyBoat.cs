@@ -11,7 +11,7 @@ public class EnemyBoat : MonoBehaviour {
 
     private void Awake()
     {
-        int pirateCount = Random.Range(5, 10);
+        int pirateCount = Random.Range(4, 8);
         for(int i = 0; i < pirateCount; i++)
         {
             GameObject ep = Instantiate(enemyPiratePrefab, transform.position + new Vector3(-1, 1.5f, (-pirateCount + 1) + (i * 2)), Quaternion.identity);
